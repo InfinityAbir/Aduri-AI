@@ -58,7 +58,15 @@ Aduri is built to feel **professional, responsive, and human**, not like a demo 
 - `localStorage` (chat history)
 
 ---
+## 🖼️ Screenshots
 
+### Home Screen
+![Home Screen](screenshots/home.png)
+
+### Chat Interface
+![Chat Interface](screenshots/chat.png)
+
+---
 ## 📁 Project Structure
 
     ```text
