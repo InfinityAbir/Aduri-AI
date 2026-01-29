@@ -1,0 +1,358 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --sidebar: #020617;
+  --accent: #6366f1;
+  --accent-soft: rgba(99, 102, 241, 0.15);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #1f2937;
+  --bubble-user: #1e293b;
+  --bubble-ai: #0b1220;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #0f172a 0%, #020617 70%);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* ================= Sidebar ================= */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #020617, #020617cc);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+#newChatBtn {
+  background: linear-gradient(135deg, var(--accent), #818cf8);
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 16px;
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#newChatBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+#historyList li {
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+#historyList li:hover {
+  background: #020617;
+  color: var(--text);
+}
+
+#historyList li.active {
+  background: var(--accent-soft);
+  color: white;
+}
+
+/* ================= Chat Area ================= */
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+}
+
+/* ================= Messages ================= */
+#messages {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.message {
+  max-width: 70%;
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  line-height: 1.55;
+  font-size: 15px;
+  animation: fadeSlide 0.35s ease both;
+  word-wrap: break-word;
+}
+
+/* User */
+.message.user {
+  margin-left: auto;
+  background: linear-gradient(135deg, var(--accent), #818cf8);
+  color: white;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
+}
+
+/* Assistant */
+.message.assistant {
+  background: var(--bubble-ai);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  gap: 12px;
+}
+
+.message.assistant img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+
+/* Markdown */
+.message.assistant div {
+  line-height: 1.6;
+}
+
+.message.assistant pre {
+  background: #020617;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.message.assistant code {
+  background: #020617;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+/* Typing */
+.message.typing {
+  font-style: italic;
+  color: var(--muted);
+  animation: typingPulse 1.2s infinite;
+}
+
+/* ================= Input Area ================= */
+.input-area {
+  padding: 14px;
+  border-top: 1px solid var(--border);
+  background: rgba(2, 6, 23, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  background: #020617;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+textarea {
+  flex: 1;
+  resize: none;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+  min-height: 22px;
+  max-height: 140px;
+}
+
+/* Send */
+#sendBtn {
+  background: linear-gradient(135deg, var(--accent), #818cf8);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#sendBtn:hover {
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* ================= Icon Buttons ================= */
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.icon-btn:active {
+  transform: scale(0.95);
+}
+
+/* Mic icon */
+.mic-icon {
+  width: 18px;
+  height: 18px;
+  fill: #c7d2fe;
+  z-index: 2;
+}
+
+/* ================= Mic Listening Animation ================= */
+.mic-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.35),
+    rgba(99, 102, 241, 0.15),
+    transparent 70%
+  );
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
+#micBtn.listening .mic-ring {
+  opacity: 1;
+  animation: listenWave 1.4s ease-in-out infinite;
+}
+
+#micBtn.listening .mic-icon {
+  fill: #6366f1;
+  animation: micFloat 1.4s ease-in-out infinite;
+}
+
+/* ================= Animations ================= */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typingPulse {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes listenWave {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+}
+
+@keyframes micFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ================= Scrollbar ================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* ================= Clear History ================= */
+.clear-history-btn {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-history-btn:hover {
+  color: #fca5a5;
+  border-color: #7f1d1d;
+  background: rgba(127, 29, 29, 0.15);
+}

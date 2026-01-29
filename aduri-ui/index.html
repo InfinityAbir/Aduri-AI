@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Aduri AI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/chat.css" />
+
+    <!-- Modern font (optional but recommended) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="theme-color" content="#0f172a" />
+  </head>
+
+  <body>
+    <div class="app">
+      <!-- ================= Sidebar ================= -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <span class="logo-dot"></span>
+            <span class="logo-text">Aduri</span>
+          </div>
+        </div>
+
+        <button id="newChatBtn" class="new-chat-btn">＋ New Chat</button>
+
+        <div class="history-wrapper">
+          <ul id="historyList"></ul>
+        </div>
+
+        <div class="sidebar-footer">
+          <button id="clearHistoryBtn" class="clear-history-btn">
+            Clear history
+          </button>
+          <span class="footer-text">Aduri AI • CSE Mentor</span>
+        </div>
+      </aside>
+
+      <!-- ================= Main Chat ================= -->
+      <main class="chat-area">
+        <!-- Header -->
+        <header class="chat-header">
+          <div class="chat-title">
+            <span class="status-dot"></span>
+            <span>Aduri AI</span>
+          </div>
+          <div class="chat-subtitle">Computer Science & Engineering Mentor</div>
+        </header>
+
+        <!-- Messages -->
+        <section id="messages" class="messages"></section>
+
+        <!-- Input -->
+        <footer class="input-area">
+          <div class="input-wrapper">
+            <textarea
+              id="userInput"
+              placeholder="Ask Aduri anything…"
+            ></textarea>
+            <button
+              id="micBtn"
+              class="icon-btn mic-wrapper"
+              aria-label="Voice input"
+            >
+              <span class="mic-ring"></span>
+
+              <svg viewBox="0 0 24 24" class="mic-icon">
+                <path
+                  d="M12 14a3 3 0 003-3V5a3 3 0 10-6 0v6a3 3 0 003 3zm5-3a5 5 0 01-10 0H5a7 7 0 0014 0h-2zM11 19h2v3h-2z"
+                />
+              </svg>
+            </button>
+            <button id="sendBtn">➤</button>
+            <button id="stopBtn" style="display: none">⏹</button>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <!-- Markdown renderer -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- App logic -->
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
