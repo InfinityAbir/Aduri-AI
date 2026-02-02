@@ -36,6 +36,64 @@ Aduri is built to feel **professional, responsive, and human**, not like a demo 
 - Smooth animations and transitions
 - Responsive layout
 
+### 🎓 Why Students Use Aduri (Instead of Generic AI Tools)
+
+Aduri is not designed to replace general-purpose AI platforms like ChatGPT.
+It is designed to serve students better, especially Computer Science & Engineering learners.
+
+### 📚 Built for Learning, Not Just Answering
+Most AI tools focus on giving quick answers.
+Aduri focuses on teaching.
+- Step-by-step explanations instead of one-shot replies
+- Concepts explained from a student’s perspective
+- Emphasis on understanding, not memorization
+- Suitable for exam preparation and revision
+- Students feel like they are learning from a mentor, not querying a search engine.
+
+### 🌍 Bangla + English, Naturally
+
+Many students think in Bangla but study in English.
+Aduri:
+- Detects Bangla automatically
+- Explains concepts in clear academic Bangla
+- Uses English technical terms where appropriate
+- Supports Bangla voice input and output
+- This lowers the barrier for understanding complex CS topics.
+
+### 🧠 Conversation Memory That Feels Personal
+Aduri remembers the context of a learning session.
+- Keeps track of recent explanations
+- Avoids repeating the same basics unnecessarily
+- Maintains flow in long study sessions
+
+This makes studying feel continuous, not fragmented.
+
+### 🎙️ Voice-First Study Experience
+Students don’t always want to type.
+Aduri supports:
+- Voice questions
+- Spoken explanations
+- Hands-free learning
+
+Useful for revision, quick doubts, or learning while multitasking.
+
+### 🧑‍🏫 Less Intimidating, More Approachable
+Many students hesitate to ask “simple” or “confusing” questions.
+Aduri is designed to be:
+- Friendly
+- Patient
+- Beginner-safe
+
+This encourages curiosity and repeated use.
+
+### 🎯 Focused Audience, Better Experience
+Aduri is intentionally focused on:
+-nComputer Science students
+- Engineering learners
+- Beginners and intermediate-level users
+
+By not trying to do everything for everyone, Aduri delivers a clearer and more relevant experience for its target users.
+
 ---
 
 ## 🛠️ Tech Stack
